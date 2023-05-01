@@ -4,6 +4,7 @@
 //
 //  Created by 4rNe5 on 2023/05/01.
 //
+
 struct RiverTemperature: Codable {
     let listTotalCount: Int
     let result: Result

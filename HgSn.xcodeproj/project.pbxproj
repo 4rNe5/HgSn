@@ -16,6 +16,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		70580C1929FF5BCB006D5960 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		70FC584A29FF4E3100733229 /* HgSn.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HgSn.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		70FC584D29FF4E3100733229 /* HgSnApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HgSnApp.swift; sourceTree = "<group>"; };
 		70FC584F29FF4E3100733229 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -57,6 +58,7 @@
 		70FC584C29FF4E3100733229 /* HgSn */ = {
 			isa = PBXGroup;
 			children = (
+				70580C1929FF5BCB006D5960 /* Info.plist */,
 				70FC584D29FF4E3100733229 /* HgSnApp.swift */,
 				70FC584F29FF4E3100733229 /* ContentView.swift */,
 				70FC585E29FF4E9B00733229 /* Rvtp.swift */,
@@ -284,9 +286,11 @@
 				DEVELOPMENT_TEAM = C552WQXUWD;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = HgSn/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = "강강강";
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.weather";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
-				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -313,9 +317,11 @@
 				DEVELOPMENT_TEAM = C552WQXUWD;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = HgSn/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = "강강강";
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.weather";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
-				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				LD_RUNPATH_SEARCH_PATHS = (
