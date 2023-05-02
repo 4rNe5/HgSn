@@ -1,34 +1,19 @@
-//
-//  Rvtp.swift
-//  HgSn
-//
-//  Created by 4rNe5 on 2023/05/01.
-//
-
-struct RiverTemperature: Codable {
-    let listTotalCount: Int
-    let result: Result
-    let wposInformationTime: WposInformationTime
-
-    enum CodingKeys: String, CodingKey {
-        case listTotalCount = "list_total_count"
-        case result
-        case wposInformationTime = "WPOSInformationTime"
-    }
+struct WPOSInformationTime: Decodable {
+    let WPOSInformationTime: Data
 }
 
-struct Result: Codable {
-    let code, message: String
-}
-
-struct WposInformationTime: Codable {
+struct Data: Decodable {
+    let list_total_count: Int
+    let RESULT: Result
     let row: [Row]
 }
 
-struct Row: Codable {
-    let msrDate, msrTime, siteID, wTemp: String
-    let wPH, wDO, wTN, wTP: String
-    let wTOC, wPHEN, wCN: String
+struct Result: Decodable {
+    let CODE, MESSAGE: String
+}
+
+struct Row: Decodable {
+    let msrDate, msrTime, siteID, wTemp, wPH, wDO, wTN, wTP, wTOC, wPHEN, wCN: String
 
     enum CodingKeys: String, CodingKey {
         case msrDate = "MSR_DATE"

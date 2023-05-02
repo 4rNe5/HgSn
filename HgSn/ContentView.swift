@@ -13,40 +13,53 @@ struct ContentView: View {
     
     var body: some View {
         VStack {
-            Image(systemName: "humidity")
+            Image(systemName: "drop.degreesign")
                 .resizable()
-                .frame(width: 200, height: 150)
+                .frame(width: 150, height: 200)
                 .imageScale(.large)
-                .foregroundColor(.accentColor)
-            
+//                .foregroundColor(.accentColor)
+                .foregroundColor(.blue)
+                .padding(20)
             Text("Hello, Hangang!")
                 .font(.system(size: 25, weight: .bold))
                 .foregroundColor(.blue)
             
-            Text("지금 한강은 \(temperature)도 입니다!")
+            Text("지금 한강의 온도는 \(temperature)도 입니다!")
                 .font(.system(size: 20, weight: .bold))
                 .foregroundColor(.blue)
                 .padding(.top, 10)
             
-//            HStack(spacing: 30) {
-//                Button("1번") { sendAPIRequest(number: 0) }
-//                    .frame(width: 50, height: 30)
-//                    .foregroundColor(Color.white)
-//                    .background(Color.blue)
-//                Button("2번") { sendAPIRequest(number: 1) }
-//                    .frame(width: 50, height: 30)
-//                    .foregroundColor(Color.white)
-//                    .background(Color.blue)
-//                Button("3번") { sendAPIRequest(number: 2) }
-//                    .frame(width: 50, height: 30)
-//                    .foregroundColor(Color.white)
-//                    .background(Color.blue)
-//                Button("4번") { sendAPIRequest(number: 3) }
-//                    .frame(width: 50, height: 30)
-//                    .foregroundColor(Color.white)
-//                    .background(Color.blue)
-//            }
-            .padding(.top, 40)
+            HStack(spacing: 20) {
+                Button("탄천") { sendAPIRequest(number: 0) }
+                    .frame(width: 50, height: 30)
+                    .foregroundColor(Color.white)
+                    .background(Color.blue)
+                    .cornerRadius(12)
+                Button("중랑천") { sendAPIRequest(number: 1) }
+                    .frame(width: 50, height: 30)
+                    .foregroundColor(Color.white)
+                    .background(Color.blue)
+                    .cornerRadius(12)
+            }
+            .padding(10)
+            HStack(spacing: 20) {
+                Button("안양천") { sendAPIRequest(number: 2) }
+                    .frame(width: 50, height: 30)
+                    .foregroundColor(Color.white)
+                    .background(Color.blue)
+                    .cornerRadius(12)
+                Button("선유") { sendAPIRequest(number: 3) }
+                    .frame(width: 50, height: 30)
+                    .foregroundColor(Color.white)
+                    .background(Color.blue)
+                    .cornerRadius(12)
+                Button("노량진") { sendAPIRequest(number: 4) }
+                    .frame(width: 50, height: 30)
+                    .foregroundColor(Color.white)
+                    .background(Color.blue)
+                    .cornerRadius(12)
+            }
+            .padding(.top, 3)
         }
         .padding()
         .onAppear {
@@ -60,22 +73,22 @@ struct ContentView: View {
         
         AF.request(url,
                    method: .get,
-                   parameters: nil,
-                   encoding: JSONEncoding(options: []),
-                   headers: ["Content-Type":"application/json", "Accept":"application/json"])
+                   encoding: URLEncoding.default,
+                   headers: ["Content-Type":"application/json"]
+        )
         .validate()
         .responseData { response in
-            print(response)
             
             switch response.result {
                 
             case .success:
+                
                 guard let value = response.value else { return }
-                guard let result = try? JSONDecoder().decode(RiverTemperature.self, from: value) else { return }
+                guard let result = try? JSONDecoder().decode(WPOSInformationTime.self, from: value) else { return }
                 
-                print(result)
+                print(result.WPOSInformationTime.RESULT)
                 
-                self.temperature = result.wposInformationTime.row[number].wTemp
+                temperature = result.WPOSInformationTime.row[number].wTemp
                 
             case .failure(let error):
                 print(error)
